@@ -38,7 +38,7 @@ class _BottomBarState extends State<BottomBar> {
   final List<Widget> children = [
       Home(),
       Scorer(),
-//      Notes(),
+      Notes(),
 //      Search(),
   ];
 
