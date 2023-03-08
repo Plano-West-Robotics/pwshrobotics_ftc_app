@@ -18,28 +18,28 @@ class Main extends StatelessWidget {
         defaultThemeId: AppThemes.LightBlue,
         builder: (context,theme){
           return MaterialApp(
-            title: 'idk',
+            title: 'Plano West Robotics',
             theme: theme,
-            home: BottomBar()
+            home: Bars()
           );
         }
     );
   }
 }
 
-class BottomBar extends StatefulWidget {
+class Bars extends StatefulWidget {
   @override
-  _BottomBarState createState() => _BottomBarState();
+  _BarsState createState() => _BarsState();
 }
 
-class _BottomBarState extends State<BottomBar> {
+class _BarsState extends State<Bars> {
   int _currentIndex = 0;
-  String _title = 'GardenGuide';
+  String _title = 'FTC All-In-One';
   final List<Widget> children = [
       Home(),
       Scorer(),
       Notes(),
-//      Search(),
+      Search(),
   ];
 
   @override
@@ -50,7 +50,7 @@ class _BottomBarState extends State<BottomBar> {
       bottomNavigationBar: BottomNavigationBar(
         iconSize: 25,
         selectedFontSize: 15,
-        backgroundColor: Colors.green[600],
+        backgroundColor: Colors.blue[600],
         selectedItemColor: Colors.grey[200],
         unselectedItemColor: Colors.grey[400],
         currentIndex: _currentIndex,
@@ -67,32 +67,35 @@ class _BottomBarState extends State<BottomBar> {
             switch (index) {
               case 0:
                 {
-                  _title = 'Dashboard';
+                  _title = 'Home';
                 }
                 break;
               case 1:
                 {
-                  _title = 'Search';
+                  _title = 'Scoring';
                 }
                 break;
               case 2:
                 {
-                  _title = 'Tutorials';
+                  _title = 'Notes';
                 }
                 break;
               case 3:
                 {
-                  _title = 'Reminders';
-                }
-                break;
-              case 4:
-                {
-                  _title = 'Settings';
+                  _title = 'Search';
                 }
                 break;
             }
           });
         },
+      ),
+      appBar: AppBar(
+        title: const Text('Plano West Robotics'),
+        backgroundColor: Colors.blue[600],
+        leading: Image.asset('assets/images/logos/pwsh-robotics.png'),
+        actions: <Widget>[
+          IconButton(onPressed: (){}, icon: Icon(Icons.settings))
+        ],
       ),
     );
   }

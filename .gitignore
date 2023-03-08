@@ -44,7 +44,3 @@ app.*.map.json
 /android/app/release
 
 # Web based Flutter setup
-/windows
-/macos
-/linux
-/web
