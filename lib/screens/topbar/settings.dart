@@ -1,15 +1,45 @@
+import 'package:dynamic_themes/dynamic_themes.dart';
 import 'package:flutter/material.dart';
-import 'package:pwshrobotics_ftc_app/main.dart';
-
-class Settings extends StatefulWidget {
-  @override
-  _SettingsState createState() => _SettingsState();
-}
 
 
-class _SettingsState extends State<Settings> {
-  @override
-  Widget build(BuildContext context) {
+class Settings{
+  double radius = 20;
+
+  showSettings(BuildContext context){
+    final themeID = DynamicTheme.of(context)!.themeId;
+    final isDark = themeID == 1;
+    final themeWord = (!isDark ? 'dark' : 'light');
+    final themeIcon = (!isDark ? Icons.dark_mode : Icons.light_mode);
+
+    showModalBottomSheet(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      context: context,
+      builder: (BuildContext context) {
+        return SafeArea(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              ListTile(
+                leading: Icon(themeIcon),
+                title: Text('Switch to ' + themeWord + ' mode'),
+                onTap: (){
+                  Navigator.pop(context);
+                  DynamicTheme.of(context)?.setTheme(isDark ? 0 : 1 );
+                }
+              ),
+              AboutListTile(
+                icon: Icon(Icons.settings),
+                applicationVersion: '1.0.0',
+                aboutBoxChildren: <Widget>[
+                  Text('idk')
+                ],
+              )
+            ],
+          )
+        );
+      }
+    );
+/*
     return IconButton(
         onPressed: () {
           showModalBottomSheet<dynamic>(
@@ -27,6 +57,7 @@ class _SettingsState extends State<Settings> {
           );
         },
         icon: const Icon(Icons.settings));
+*/
   }
 }
 

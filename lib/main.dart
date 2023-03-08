@@ -94,7 +94,9 @@ class _BarsState extends State<Bars> {
         backgroundColor: Colors.blue[600],
         leading: Image.asset('assets/images/logos/pwsh-robotics.png'),
         actions: <Widget>[
-          Settings()
+          IconButton(
+              icon: const Icon(Icons.settings),
+              onPressed: () => Settings().showSettings(context))
         ],
       ),
     );
