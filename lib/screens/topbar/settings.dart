@@ -10,6 +10,35 @@ class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     return IconButton(
+        onPressed: () {
+          showModalBottomSheet<void>(
+              context: context,
+              builder: (BuildContext context) {
+                return SizedBox(
+                  height: 200,
+                  child: Center(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        TextButton(onPressed: () {},child: const Text('Switch mode')),
+                        TextButton(onPressed: () {},child: const Text('About'))
+                      ],
+                    )
+                  ),
+                );
+              }
+          );
+        },
+        icon: const Icon(Icons.settings));
+  }
+}
+
+/*
+class _SettingsState extends State<Settings> {
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
         onPressed: () => showDialog<String>(
             context: context,
             builder: (context) => AlertDialog(
@@ -27,3 +56,4 @@ class _SettingsState extends State<Settings> {
         icon: const Icon(Icons.settings));
   }
 }
+ */
