@@ -8,6 +8,19 @@ class Settings extends StatefulWidget {
 class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return IconButton(
+        onPressed: () => showDialog<String>(
+            context: context,
+            builder: (BuildContext context) => AlertDialog(
+              content: Column(
+                children: [
+                  TextButton(onPressed: () {},child: Text('Switch mode'),),
+                  TextButton(onPressed: () {},child: Text('About'),)
+                ],
+              )
+ //             actions: <Widget>[TextButton(onPressed: () => Navigator.pop(context, 'Done'), child: const Text('Done'))],
+            )
+        ),
+        icon: Icon(Icons.settings));
   }
 }
