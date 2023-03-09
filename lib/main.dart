@@ -50,9 +50,10 @@ class _BarsState extends State<Bars> {
       bottomNavigationBar: BottomNavigationBar(
         iconSize: 25,
         selectedFontSize: 15,
-        backgroundColor: Colors.blue[600],
-        selectedItemColor: Colors.grey[200],
-        unselectedItemColor: Colors.grey[400],
+        //backgroundColor: Colors.blue[600],
+        selectedItemColor: Colors.blue[600],
+        //selectedItemColor: Colors.grey[200],
+        //unselectedItemColor: Colors.grey[400],
         currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,
         items: const [
@@ -90,8 +91,8 @@ class _BarsState extends State<Bars> {
         },
       ),
       appBar: AppBar(
-        title: const Text('Plano West Robotics'),
-        backgroundColor: Colors.blue[600],
+        title: const Center(child: Text('Plano West Robotics')),
+        //backgroundColor: Colors.blue[600],
         leading: Image.asset('assets/images/logos/pwsh-robotics.png'),
         actions: <Widget>[
           IconButton(

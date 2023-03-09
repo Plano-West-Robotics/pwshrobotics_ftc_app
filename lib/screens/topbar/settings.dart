@@ -27,7 +27,7 @@ class Settings{
                   DynamicTheme.of(context)?.setTheme(isDark ? 0 : 1 );
                 }
               ),
-              AboutListTile(
+              const AboutListTile(
                 icon: Icon(Icons.settings),
                 applicationVersion: '1.0.0',
                 aboutBoxChildren: <Widget>[
