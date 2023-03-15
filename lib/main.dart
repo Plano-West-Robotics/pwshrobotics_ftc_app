@@ -36,10 +36,10 @@ class _BarsState extends State<Bars> {
   int _currentIndex = 0;
   String _title = 'FTC All-In-One';
   final List<Widget> children = [
-      Home(),
-      Scorer(),
-      Notes(),
+      //Home(),
       Search(),
+      Notes(),
+      Scorer(),
   ];
 
   @override
@@ -57,35 +57,19 @@ class _BarsState extends State<Bars> {
         currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.scoreboard), label: 'Scoring'),
-          BottomNavigationBarItem(icon: Icon(Icons.notes), label: 'Notes'),
+          //BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
+          BottomNavigationBarItem(icon: Icon(Icons.notes), label: 'Notes'),
+          BottomNavigationBarItem(icon: Icon(Icons.scoreboard), label: 'Scoring'),
         ],
         onTap: (index) {
           setState(() {
             _currentIndex = index;
             switch (index) {
-              case 0:
-                {
-                  _title = 'Home';
-                }
-                break;
-              case 1:
-                {
-                  _title = 'Scoring';
-                }
-                break;
-              case 2:
-                {
-                  _title = 'Notes';
-                }
-                break;
-              case 3:
-                {
-                  _title = 'Search';
-                }
-                break;
+             // case 0:{_title = 'Home';}break;
+              case 0:{_title = 'Search';}break;
+              case 1:{_title = 'Notes';}break;
+              case 2:{_title = 'Scoring';}break;
             }
           });
         },
